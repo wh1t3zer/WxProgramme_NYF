@@ -1,0 +1,28 @@
+<import src ="../template/xianzhiTemp.wxml"/>
+<import src="./xianzhi.skeleton.wxml"/>
+<!-- 搜索页 -->
+<view class="cu-bar bg-white search" wx:if="{{!myPage}}">
+    <view class="search-form radius">
+        <text class="cuIcon-search"></text>
+        <input placeholder="搜索关键词" type="text" name="keyword" bindinput="inputKeyword"></input>
+    </view>
+    <text style="width: 90rpx; height: 33rpx; display: block; box-sizing: border-box;" bindtap="search">搜索</text>
+</view>
+
+<template is="skeleton" wx:if="{{!load}}"></template>
+<view wx:else>
+    <template is="xianzhiTemp" data="{{DBdata, categories, currentData, myPage}}"></template>
+  </view>
+
+  
+  <view class='post-container'>
+  <view class='post'>
+    <image src='../../images/post.png' bindtap='post' style="position: relative;"></image>
+  </view>
+
+  <view class='post'>
+    <image src='../../images/refresh.png' bindtap='refreshItem' style="position: relative;"></image>
+  </view>
+</view>
+
+  

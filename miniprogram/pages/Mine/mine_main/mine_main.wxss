@@ -1,0 +1,66 @@
+.infomation{
+  display:flex;
+  width: 100%;
+  height: 230rpx;
+  background:#ffffff;
+  justify-content: left;
+  align-items: left;
+}
+.menus{
+  position: relative; 
+  width: 750rpx; 
+  background: #ffffff; 
+  min-height: 100px; 
+  left: 0rpx; 
+  top: 0rpx; 
+  height: 200rpx; 
+  display: flex; 
+  box-sizing: border-box
+}
+.menus-item{
+  width: 120rpx;
+  height:120rpx;
+  position: relative; 
+  left: 15rpx; 
+  top: 19rpx;
+  display:block;
+}
+.menus-img{
+  width: 113rpx; 
+  height: 101rpx; 
+  display: block; 
+  box-sizing: border-box; 
+}
+.adver{
+  position: relative; 
+  width: 100%; 
+  background: #ffffff; 
+  min-height: 100px; 
+  left: 0rpx; 
+  top: 300rpx
+}
+/*头像容器*/
+.mine_avatar_bd{
+
+  padding:39rpx 10rpx;
+  width:180rpx;
+  height:200rpx;
+ 
+}
+.mine_nickName{
+  /* flex:1; */
+  color:rgb(0, 0, 0);
+  font-size:16px;
+  padding:90rpx 23rpx;
+}
+.mine_login{
+  flex:1;
+  color:#fff;
+  font-size:16px;
+}
+
+.cu-avatar.xl {
+	width: 150rpx;
+	height: 150rpx;
+	font-size: 2.5em;
+}

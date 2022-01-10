@@ -1,0 +1,129 @@
+@import "./xianzhi.skeleton.wxss";
+.categories{ 
+  display: flex; 
+  width: 100%; 
+  flex-direction: row; 
+  line-height: 80rpx; 
+  position: sticky;
+ } 
+.categories .item{ 
+  flex: auto; 
+  font-size: 30rpx; 
+  text-align: center; 
+  background: #fff; 
+  /* font-weight: bold;  */
+ } 
+.categories .item.active{ 
+  color: #1296DB;
+  position: relative;
+ } 
+ .categories .item.active::after{ 
+  content: ""; 
+  display: block; 
+  position: absolute;
+  margin-left: auto;
+  margin-right:auto;
+  width: 50%;
+  height: 4rpx; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background: #1296DB;
+ }
+ 
+ 
+ 
+.swiper{
+   display: flex; 
+   width: 100%; 
+   flex-direction: row; 
+   line-height: 80rpx; 
+   position: fixed;
+   max-height: 100%;
+   height: 100%;
+ }
+ 
+ 
+ 
+.container {
+   padding: 0 12.5rpx 0 12.5rpx;
+   width:750rpx;
+   display: flex;
+   flex-direction:row;
+   flex-wrap:wrap;
+   justify-content:space-between;
+ }
+ 
+ 
+.item_each{
+   margin: 7.5rpx 5rpx 7.5rpx 5rpx;
+   display: inline-block;
+   width: 352.5rpx;
+   border-radius: 3%;
+   background-color: #fff;
+ }
+ 
+.item_cell{
+   margin: 0 20rpx 0 20rpx;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ 
+.item_text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+   align-content: center;
+   color:black;
+ }
+ 
+.item_price{
+   display:inline-block;
+   font-size: 30rpx;
+   font-weight: bold;
+   color:#FF4F64;
+ 
+ }
+ 
+.item_price_before{
+   display:inline-block;
+   flex:1rpx;
+   font-size: 25rpx;
+   text-decoration:line-through;
+   color:#B2B2B2;
+ }
+.post-container{
+  position:fixed;
+  right:18rpx;
+  bottom:20rpx;
+  z-index:100;
+  width: 120prx;
+  height: 120prx;
+}
+
+.post-container .wall{
+  position: absolute;
+  z-index: 105;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background: white;
+  right: 10rpx;
+  bottom: 30rpx;
+}
+
+.post image{
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  z-index: 110;
+}
+
+ 
+ 
+ 
+
+ 

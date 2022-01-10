@@ -1,0 +1,36 @@
+
+<swiper class="Swiper">
+  <swiper-item wx:for="{{detail.images}}" wx:key="images">
+    <image src='{{item}}'  mode="aspectFill" class="img" bindtap="PreviewImg" data-index="{{index}}"></image>
+  </swiper-item>
+</swiper>
+<view class="container">
+  <view class="userImg">
+      <image  src="{{swiperList[detail.swiper_index].url}}"  />
+    </view>
+    <view class="content">
+    <view class="user-name">{{detail.nickname}}</view>
+    <view style="position: relative;top:10rpx;">{{detail.date}}</view>
+
+  <view class="flex justify-between" style="position: relative; width:18%;top: -60rpx;left:80%">
+<text class="text-yellow"wx:if="{{detail.type=='拾物寻主'}}" >{{detail.type}}</text>
+<text class="text-red"wx:if="{{detail.type=='寻找失物'}}">{{detail.type}}</text>
+</view>
+  </view>
+<view class="things">{{detail.things}}</view>
+<view class="text" >{{detail.content}}</view>
+</view>
+
+<view style="margin-top:60%;margin-left:2%;" wx:if="{{detail.contact=='phone'||detail.contact=='all'}}">
+<text>手机号：{{user_data.phone}}</text>
+<view class="margin-tb-sm text-center" style="width: 25%; display: inline-flex; left:35%; position: relative">
+<button class="cu-btn round bg-yellow" bindtap="callphone" id="phoneButton" >拨打电话</button>
+</view>
+</view>
+
+<view wx:if="{{detail.contact=='wechat'||detail.contact=='all'}}">
+  <text style="margin-left:2%">微信号：{{user_data.wechat_id}}</text>
+  <view class="margin-tb-sm text-center" style="width: 25%;display: inline-flex; left:34%; position: relative">
+<button class="cu-btn round bg-yellow" bindtap="copywechat" id="wechatButton">复制微信</button>
+</view>
+</view>

@@ -1,0 +1,46 @@
+
+<form report-submit="false" bindsubmit="uploadPost">
+<!-- 表白对象 -->
+<view class="cu-form-group margin-top">
+		<view class="title">表白Ta</view>
+		<input name="name"></input>
+	</view>
+<!-- 文本框 -->
+  <view class="cu-form-group margin-top0">
+    <textarea style='height:200rpx;' maxlength="1024" disabled="{{modalName!=null}}" name="textContent" placeholder="爱要勇敢说出来哦"></textarea>   
+  </view>
+ <!-- 图片选择 -->
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片
+		</view>
+		<view class="action">
+			{{images.length}}/4
+					</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{images}}" wx:key="*this" >
+				<image src="{{item}}" data-index="{{index}}" bindtap="previewImage" mode="aspectFill"></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="chooseImage" wx:if="{{love_imgs.length<1}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+  	<view class="cu-form-group margin-top">
+		<view class="title">匿名</view>
+		<switch bindchange="setPrivate"></switch>
+	</view>
+
+<view class="padding flex flex-direction">
+  <!-- <button class="cu-btn bg-green lg" bindtap='post_love' disabled='{{!canPost}}'>发布到表白墙</button> -->
+	<button hidden="{{!display}}" class="cu-btn bg-green lg" report-submit='true' form-type='submit'>发布到表白墙</button>
+</view>
+
+
+</form>

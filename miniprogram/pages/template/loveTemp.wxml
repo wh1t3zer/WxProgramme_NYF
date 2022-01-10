@@ -1,0 +1,56 @@
+<template name="loveTemp">
+  <view class='categories'>
+    <text wx:for="{{categories}}" data-index="{{index}}" class="item {{currentData==index?'active':''}}" bindtap="categoriesTab" wx:key="unique">{{item}}</text>
+  </view>
+  <swiper current="{{currentData}}" class="swiper" scroll-y="true" duration="300" bindchange="categoriesChange">
+    <block wx:for="{{categories}}" wx:for-item="category" wx:key="index">
+      <swiper-item>
+        <scroll-view scroll-y="true" class="container" style="position: absolute; height:100%;" lower-threshold="5" bindscrolltolower="lower">
+          <view class="item_container">
+            <view wx:if="{{!myPage}}">
+              <view class="item_each" wx:for="{{DBdata}}" wx:for-index="idx" wx:key="index" wx:if="{{category==('全部')||item.type==category}}">
+                <view bindtap='jumpToPost' id='{{idx}}'>
+                  <view class="item_cell">
+                    <text class="item_text text-bold">{{item.title}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <image src="{{item.imgs[0]}}" style="width=100%" mode="aspectFill" lazy-load="true"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text">{{item.content}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price">￥{{item.price}}</text>
+                    <text class="item_price_before">￥{{item.oldPrice}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view wx:else>
+              <view class="item_each" wx:for="{{xianzhiData}}" wx:for-index="idx" wx:key="index" wx:if="{{(item._openid == user_openid) && (category==('全部')||item.type==category)}}">
+                <view bindtap='jumpToPost' id='{{idx}}'>
+                  <view class="item_cell">
+                    <text class="item_text text-bold">{{item.title}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <image src="{{item.imgs[0]}}" style="width=100%" mode="aspectFill" lazy-load="true"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text">{{item.content}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price">￥{{item.price}}</text>
+                    <text class="item_price_before">￥{{item.oldPrice}}</text>
+                  </view>
+                </view>
+                <view class="express-card delete" bindtap="deleteGood" id='{{idx}}'>
+                  <image style="width:30px; height:30px;" src="../../images/delete.png"/>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>

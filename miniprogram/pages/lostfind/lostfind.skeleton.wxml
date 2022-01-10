@@ -1,0 +1,94 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/10/26 下午10:49:21
+使用方法：
+在 C:\Users\60246\Desktop\南苑范\miniprogram\pages\lostfind\lostfind.wxml 引入模板
+
+```
+<import src="lostfind.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 C:\Users\60246\Desktop\南苑范\miniprogram\pages\lostfind\lostfind.wxss 中引入样式
+```
+@import "./lostfind.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="cu-bar bg-white search">
+      <view class="search-form radius">
+        <text class="cuIcon-search sk-pseudo sk-pseudo-circle"></text>
+        <view name="keyword" placeholder="搜索关键词" type="text" class="sk-image"></view>
+      </view>
+      <text style="width: 38px; height: 14px; display: block; box-sizing: border-box;" class="sk-transparent sk-text-14-2857-859 sk-text">搜索</text>
+    </view>
+    <swiper current="0" autoplay="false">
+      <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+        <image class="sk-image"></image>
+      </swiper-item>
+    </swiper>
+    <view>
+      <view class="categories">
+        <text class="item active sk-transparent sk-text-32-3529-341 sk-text sk-pseudo sk-pseudo-circle" data-index="0" style="background-position-x: 50%;">全部</text>
+        <text class="item sk-transparent sk-text-32-3529-692 sk-text" data-index="1" style="background-position-x: 50%;">寻找失物</text>
+        <text class="item sk-transparent sk-text-32-3529-934 sk-text" data-index="2" style="background-position-x: 50%;">拾物寻主</text>
+      </view>
+      <swiper class="swiper1" current="0" duration="300" autoplay="false">
+        <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+          <scroll-view class="container" enable-back-to-top="true" lower-threshold="5" scroll-y="true" style="position: absolute; height:100%;" upper-threshold="10">
+            <view class="item_container">
+              <view>
+                <view class="item_each">
+                  <view class="cu-card article">
+                    <view class="cu-item shadow" data-id="9e7190f1617803940231ab277653fb5a">
+                      <view class="title">
+                        <view class="flex justify-between">
+                          <text class="text-cut sk-transparent sk-text-35-7143-187 sk-text">sad</text>
+                          <text class="text-yellow sk-transparent sk-text-35-7143-213 sk-text">拾物寻主</text>
+                        </view>
+                      </view>
+                      <view class="content">
+                        <image lazy-load="true" mode="aspectFit" class="sk-image"></image>
+                        <view class="desc">
+                          <view class="text-content sk-transparent sk-text-18-7500-958 sk-text">sdw</view>
+                        </view>
+                        <view class="sk-transparent sk-text-33-8235-850 sk-text">2021/10/26 21:33:07</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+                <view class="item_each">
+                  <view class="cu-card article">
+                    <view class="cu-item shadow" data-id="9e7190f1617800cc02314c260d8e5543">
+                      <view class="title">
+                        <view class="flex justify-between">
+                          <text class="text-cut sk-transparent sk-text-35-7143-700 sk-text">asdwa</text>
+                          <text class="text-yellow sk-transparent sk-text-35-7143-664 sk-text">拾物寻主</text>
+                        </view>
+                      </view>
+                      <view class="content">
+                        <image lazy-load="true" mode="aspectFit" class="sk-image"></image>
+                        <view class="desc">
+                          <view class="text-content sk-transparent sk-text-18-7500-442 sk-text">sadwa</view>
+                        </view>
+                        <view class="sk-transparent sk-text-33-8235-340 sk-text">2021/10/26 21:21:15</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="post-container">
+      <view class="wall"></view>
+      <view class="post">
+        <image class="sk-image"></image>
+      </view>
+    </view>
+  </view>
+</template>

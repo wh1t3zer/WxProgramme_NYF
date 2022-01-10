@@ -1,0 +1,64 @@
+<!-- 搜索页 -->
+<view class="cu-bar bg-white search" wx:if="{{!myPage}}">
+    <view class="search-form radius">
+        <text class="cuIcon-search"></text>
+        <input placeholder="搜索关键词" type="text" name="keyword" bindinput="inputKeyword"></input>
+    </view>
+    <text style="width: 90rpx; height: 33rpx; display: block; box-sizing: border-box;" bindtap="search">搜索</text>
+</view>
+<view class="container">
+<view class='categories'>
+  <text wx:for="{{categories}}" data-index="{{index}}" class="item {{currentData==index?'active':''}}" bindtap="categoriesTab" wx:key="unique">{{item}}</text>
+</view>
+
+<view class="container-wall">
+      <view class="wall-item" wx:for="{{DBdata}}" wx:key="index">
+        <view class="item-container" data-id="{{item._id}}" id="{{item._id}}" >
+
+       <!-- 头像 -->
+       <view class="item-image">
+                <image bindtap="previewImage" id="{{swiperList[item.swiper_index].url}}" src="{{swiperList[item.swiper_index].url}}"></image>
+        </view>
+        <view class="item-content">
+          <view class="user-name">
+            <view>
+                <view class='nickname'>{{item.nickname}}</view>
+             </view>
+          </view>
+          <view>{{item.created_at}}</view>
+            <!-- 内容 -->
+            <view class="content" wx:if="{{item.content}}"style="color:#2c2c2c;"bindtap="squaredetail"data-id="{{item._id}}">{{item.content}}</view>
+             <view class="single-image" wx:if='{{item.images.length==1}}'>
+                    <image mode="widthFix" class="image-item" wx:for="{{item.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+              </view>
+
+              <view class='more-image' wx:if='{{item.images.length>1}}'>
+                    <image mode="aspectFill" class="image-item" 
+                    wx:for="{{item.images}}" bindtap="previewMoreImage"wx:key="images" wx:for-item="sitem"data-obj="{{item.images}}"src="{{sitem}}"
+                    id="{{sitem}}"></image>
+                </view>
+
+                <!-- 发布时间 -->
+                <view class="post-time">
+                     <!-- 时间 -->
+                   <view class="time-and-delete">
+                    <view class="delete-post" id="{{item._id}}" wx:if="{{item.can_delete}}" bindtap="deletePost">删除</view>
+                   </view>
+                   <view>
+                   </view>
+                </view>
+        </view>
+        </view>
+      </view>
+    </view>
+    </view>
+
+<view class='post-container'>
+  <view class='post'>
+    <image src='../../images/post.png' bindtap='post' style="position: relative;"></image>
+  </view>
+
+  <view class='post'>
+    <image src='../../images/refresh.png' bindtap='refreshItem' style="position: relative;"></image>
+  </view>
+</view>

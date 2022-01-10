@@ -1,0 +1,82 @@
+<view class="page">
+  <form report-submit="false" bindsubmit="uploadPost">
+    
+
+    
+    <!-- 闲置分类 -->
+    <view class="sell_cells">
+    <view class="sell_cell">
+      <text style="color: red;">*</text>
+      <text class="sell_title">分类</text>
+      <picker name="xianzhi_type" style="flex:1;display:flex;justify-content:flex-end" bindchange="bindPickerChange" value="{{type_index}}" range="{{types}}">
+        <text class="sell_select">{{shiwu_type!=""?shiwu_type:"请选择物品分类"}}</text>
+      </picker>
+    </view>
+    </view>
+    <view class="sell_cells">
+    <view class="sell_cell">
+      <text style="color: red;">*</text>
+      <text class="sell_title">物品</text>
+      <input name="shiwu_things"placeholder="输入丢失/拾取到的物品"></input>
+    </view>
+    </view>
+    
+
+    <!-- 标题和描述 -->
+    <view class="sell_cells">
+    <view class="sell_cell" style="align-items:flex-start">
+      <text > </text>
+      <text class="sell_title">描述</text>
+      <textarea name="shiwu_content" class="sell_input" placeholder="请简要的描述一下你捡到或丢失物品的地点、时间等（文字不超过50字，附图不超过1张）" placeholder-class='placeholder' maxlength="50" bindinput="bindInput"></textarea>
+    </view>
+
+    <!-- 字数提示，超过130字变红 -->
+    <view class="sell_cell" style="justify-content:flex-end">
+      <view wx:if="{{inputLength>130}}">
+      <text class="sell_hint_text">{{inputLength}}</text>
+      <text class="sell_text">/140</text>
+      </view>
+      <view wx:else>
+        <text class="sell_text">{{inputLength}}/140</text>
+      </view>
+    </view>
+
+    <!-- 上传图片 -->
+    <view class="sell-cell_uploader">
+        <view class="sell_uploader_imgbox" wx:for="{{images}}" wx:key="*this">
+          <image class="sell_uploader_img" src="{{item}}" data-index="{{index}}" bindtap="handleImagePreview" mode="aspectFill"></image>
+          <image class="sell_uploader_img_del" bindtap="removeImage" data-index="{{index}}" src="../../../images/x.png"/>
+        </view>
+        <view class="sell_uploader_box">
+          <view class="sell_uploader_input" bindtap="chooseImage"></view>
+        </view>
+    </view>
+    </view>
+
+    <!-- 选择联系方式 -->
+    <view class='sell_cells'>
+      <view class="sell_cell" style="align-items: flex-start">
+      <text style="color:red;">*</text>
+      <text class="sell_title">联系方式</text>
+        <checkbox-group>
+          <view class="checkbox" style="margin-bottom: 5px;">
+            <switch checked="{{contact_wechat}}" bindchange="switchChange"/>  通过<span style="font-weight:bold">微信</span>联系
+          </view>
+          <view class="checkbox">
+            <switch checked="{{contact_phone}}" bindchange="switchChange2"/>  通过<span style="font-weight:bold">电话</span>联系
+          </view>
+        </checkbox-group>
+      </view>
+    </view>
+
+    <button wx:if="{{display}}" class="sell_btn" report-submit='true' form-type='submit'>确认发布</button>
+
+
+    <!--模态窗口-->
+    <modal title="提示" class="modal" cancel-text="取消" hidden="{{modalName!='Modal'}}" no-cancel bindconfirm="modalChange">
+      <view style="text-align: center;" class="content">
+        {{warning}}
+      </view>
+    </modal>
+  </form>
+</view>

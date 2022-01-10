@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Mine/mine_main/mine_main",
+    "pages/Mine/registered/registered",
+    "pages/Mine/userInfo/userInfo",
+    "pages/Admin/agreement/agreement",
+    "pages/Mine/about/about",
+    "pages/Mine/feedback/feedback",
+    "pages/xianzhi/xianzhi",
+    "pages/lostfind/lostfind",
+    "pages/love/love",
+    "pages/message/message",
+    "pages/Post/uploadxianzhi/uploadxianzhi",
+    "pages/contact_xianzhi/contact_xianzhi",
+    "pages/Post/uploadlove/uploadlove",
+    "pages/love_list/love_list",
+    "pages/myxianzhi/myxianzhi",
+    "pages/publish/publish",
+    "pages/mylove/mylove",
+    "pages/square/square",
+    "pages/Post/uploadtiezi/uploadtiezi",
+    "pages/Post/uploadfind/uploadfind",
+    "pages/lostfind_list/lostfind_list",
+    "pages/Post/uploadlove/upload_friend/upload_friend",
+    "pages/square_list/square_list"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF8C00",
+    "navigationBarTitleText": "南苑范",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/首页.png",
+        "text": "首页",
+        "selectedIconPath": "./images/select首页.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "./images/消息.png",
+        "text": "消息",
+        "selectedIconPath": "./images/select消息.png"
+      },
+      {
+        "pagePath": "pages/Mine/mine_main/mine_main",
+        "text": "我的",
+        "iconPath": "./images/我的.png",
+        "selectedIconPath": "./images/select我的.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位服务"
+    }
+  }
+}

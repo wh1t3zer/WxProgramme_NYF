@@ -1,0 +1,10 @@
+<view>
+  <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  首先欢迎大家使用南苑范微信小程序，本程序意在为大学生建立一个良好的交友平台，利用网络社交鼓励交友，让大学生远离社恐
+
+
+  因技术有限和时间关系，程序使用过程中会出现许多未知的bug，可在我的界面里点击遇见反馈向我们反馈，感谢同学们的支持
+  </text>
+  <text style="float:right">南苑范开发小组</text>
+  <view id="style"></view>
+</view>

@@ -1,0 +1,12 @@
+<import src="../template/xianzhiTemp.wxml"/>
+<import src="./myxianzhi.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{!load}}"></template>
+<view wx:else>
+<template is="xianzhiTemp" data="{{DBdata, categories, currentData, user_openid, myPage}}"></template>
+</view>
+
+  <view class='post-container'>
+  <view class='post'>
+    <image src='../../images/refresh.png' bindtap='refreshItem' style="position: relative;"></image>
+  </view>
+</view>

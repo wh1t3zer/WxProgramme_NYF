@@ -1,0 +1,61 @@
+<view class="inform-warp">
+    <image class="inform" src='../../images/inform.png'></image>
+    <scroll-view class="container">
+      <view class="scrolltxt">
+        <view class="marquee_box">
+          <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px); position: absolute; left: 4rpx; top: -2rpx">
+            <text>{{text}}</text>
+            <text style="margin-right:{{marquee_margin}}px;"></text>
+            <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+<view class="index">
+
+  <swiper autoplay="true" interval="3000">
+    <swiper-item>
+      <image src="https://www.jacky666.top/swiper/南苑.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://www.jacky666.top/swiper/banner01.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://www.jacky666.top/swiper/banner02.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+<view class="padding-sm">
+<view class="bg-cyan padding radius text-center light">
+<view class="text-lg">公告栏</view>
+</view>
+</view>
+
+<view class="cu-list grid col-4 {{gridBorder?'':'no-border'}}" style="margin-top:20rpx;">
+  <view class="cu-item">
+    <view class="cuIcon-shop text-red" bindtap="GoToxianzhi">
+    </view>
+    <text>二手闲置</text>
+  </view>
+  <view class="cu-item">
+    <view class="cuIcon-pick text-orange" bindtap="GoTolostfind">
+    </view>
+    <text>失物招领</text>
+  </view>
+  <view class="cu-item" >
+    <view class="cuIcon-discover text-pink" bindtap="GoTogate">
+    </view>
+    <text>广场</text>
+  </view>
+  <view class="cu-item" >
+    <view class="cuIcon-wefill text-red" bindtap="GoTolove">
+    </view>
+    <text>表白墙</text>
+  </view>
+</view>
+</view>
+<!-- <view class="advertise"></view> -->
+
+
+

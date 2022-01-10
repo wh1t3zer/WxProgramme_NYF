@@ -1,0 +1,110 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/10/14 下午8:35:29
+使用方法：
+在 C:\Users\60246\Desktop\南苑范\miniprogram\pages\myxianzhi\myxianzhi.wxml 引入模板
+
+```
+<import src="myxianzhi.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 C:\Users\60246\Desktop\南苑范\miniprogram\pages\myxianzhi\myxianzhi.wxss 中引入样式
+```
+@import "./myxianzhi.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="categories">
+      <text class="item active sk-transparent sk-text-31-2500-93 sk-text sk-pseudo sk-pseudo-circle" data-index="0" style="background-position-x: 50%;">全部</text>
+      <text class="item sk-transparent sk-text-31-2500-259 sk-text" data-index="1" style="background-position-x: 50%;">化妆类</text>
+      <text class="item sk-transparent sk-text-31-2500-224 sk-text" data-index="2" style="background-position-x: 50%;">电器类</text>
+      <text class="item sk-transparent sk-text-31-2500-399 sk-text" data-index="3" style="background-position-x: 50%;">学习类</text>
+      <text class="item sk-transparent sk-text-31-2500-455 sk-text" data-index="4" style="background-position-x: 50%;">衣物类</text>
+      <text class="item sk-transparent sk-text-31-2500-608 sk-text" data-index="5" style="background-position-x: 50%;">生活类</text>
+    </view>
+    <swiper class="swiper" current="0" duration="300" autoplay="false">
+      <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+        <scroll-view class="container" lower-threshold="5" scroll-y="true" style="position: absolute; height:100%;" upper-threshold="10">
+          <view class="item_container">
+            <view>
+              <view class="item_each">
+                <view id="0">
+                  <view class="item_cell">
+                    <text class="item_text text-bold sk-transparent sk-text-32-5000-906 sk-text">kk</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text sk-transparent sk-opacity">jj</text>
+                  </view>
+                  <view class="item_cell">
+                    <image lazy-load="true" mode="aspectFill" style="width=100%" class="sk-image"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price sk-transparent sk-text-31-2500-866 sk-text">￥5</text>
+                    <text class="item_price_before sk-transparent sk-text-35-0000-874 sk-text" style="text-decoration-color: transparent;">￥5</text>
+                  </view>
+                </view>
+                <view class="xianzhi-card delete">
+                  <button class="cu-btn round lines-red sk-transparent sk-button sk-pseudo sk-pseudo-circle" id="0" style="width:75px;margin-right:15px;">删除</button>
+                </view>
+              </view>
+              <view class="item_each">
+                <view id="1">
+                  <view class="item_cell">
+                    <text class="item_text text-bold sk-transparent sk-text-32-5000-981 sk-text">aaaa</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text sk-transparent sk-text-32-5000-149 sk-text">aaa</text>
+                  </view>
+                  <view class="item_cell">
+                    <image lazy-load="true" mode="aspectFill" style="width=100%" class="sk-image"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price sk-transparent sk-text-31-2500-885 sk-text">￥14</text>
+                    <text class="item_price_before sk-transparent sk-text-35-0000-66 sk-text" style="text-decoration-color: transparent;">￥14</text>
+                  </view>
+                </view>
+                <view class="xianzhi-card delete">
+                  <button class="cu-btn round lines-red sk-transparent sk-button sk-pseudo sk-pseudo-circle" id="1" style="width:75px;margin-right:15px;">删除</button>
+                </view>
+              </view>
+              <view class="item_each">
+                <view id="2">
+                  <view class="item_cell">
+                    <text class="item_text text-bold sk-transparent sk-text-32-5000-744 sk-text">aaaa</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text sk-transparent sk-text-32-5000-694 sk-text">aaa</text>
+                  </view>
+                  <view class="item_cell">
+                    <image lazy-load="true" mode="aspectFill" style="width=100%" class="sk-image"></image>
+                  </view>
+                </view>
+              </view>
+              <view class="item_each">
+                <view id="3">
+                  <view class="item_cell">
+                    <text class="item_text text-bold sk-transparent sk-text-32-5000-268 sk-text">马克思主义</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text sk-transparent sk-text-32-5000-142 sk-text">马克思主义</text>
+                  </view>
+                  <view class="item_cell">
+                    <image lazy-load="true" mode="aspectFill" style="width=100%" class="sk-image"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+    <view class="post-container">
+      <view class="post">
+        <image style="position: relative;" class="sk-image"></image>
+      </view>
+    </view>
+  </view>
+</template>

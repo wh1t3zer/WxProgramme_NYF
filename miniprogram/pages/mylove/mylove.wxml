@@ -1,0 +1,5 @@
+<import src="../template/loveTemp.wxml"></import>
+
+
+
+<template is="loveTemp" data="{{DBdata,categories,user_openid,currentData,myPage}}"></template>g

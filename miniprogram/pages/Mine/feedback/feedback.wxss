@@ -1,0 +1,10 @@
+.top{
+  height: 300rpx;
+  margin-top: 50rpx;
+  background: rgb(255, 255, 255);
+}
+.content{
+  background: rgb(255, 255, 255);
+  height: 500rpx;
+  margin-top: 100rpx;
+}

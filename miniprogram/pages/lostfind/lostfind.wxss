@@ -1,0 +1,174 @@
+@import "./lostfind.skeleton.wxss";
+.post-container{
+  position:fixed;
+  right:18rpx;
+  bottom:20rpx;
+  z-index:100;
+  width: 120prx;
+  height: 120prx;
+}
+
+.post-container .wall{
+  position: absolute;
+  z-index: 105;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background: white;
+  right: 10rpx;
+  bottom: 30rpx;
+}
+
+.post image{
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  z-index: 110;
+}
+swiper{
+  height: 15vh;
+  box-shadow: 10rpx 10rpx 10rpx rgba(0, 0, 0, 0.2);
+
+}
+image{
+  width: 100%;
+  height: 30vh;
+}
+.categories{ 
+  display: flex; 
+  width: 100%; 
+  flex-direction: row; 
+  line-height: 80rpx; 
+ } 
+.categories .item{ 
+  flex: auto; 
+  font-size: 30rpx; 
+  text-align: center; 
+  background: #fff; 
+  /* font-weight: bold;  */
+ } 
+.categories .item.active{ 
+  color: #e7400d;
+  position: relative;
+ } 
+ .categories .item.active::after{ 
+  content: ""; 
+  display: block; 
+  position: absolute;
+  margin-left: auto;
+  margin-right:auto;
+  width: 50%;
+  height: 4rpx; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background: #e7400d;
+ }
+
+ /* 卡片布局 */
+ .cu-card {
+  display: block;
+  overflow: hidden;
+}
+
+.cu-card>.cu-item {
+  display: block;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 10rpx;
+  margin: 10rpx 20rpx;
+}
+
+.cu-card.article {
+  display: block;
+}
+
+.cu-card.article>.cu-item {
+  padding-bottom: 30rpx;
+}
+
+.cu-card.article>.cu-item .title .text-cut{
+  font-size: 30rpx;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 100rpx;
+  padding: 0 0 0 0;
+}
+
+
+.cu-card.article>.cu-item .content {
+  display: flex;
+  padding: 0 30rpx;
+}
+
+.cu-card.article>.cu-item .content>image {
+  width: 240rpx;
+  height: 6.4em;
+  margin-right: 50rpx;
+  margin-bottom: 60rpx;
+  border-radius: 6rpx;
+}
+
+.cu-card.article>.cu-item .content .desc {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cu-card.article>.cu-item .content .text-content {
+  font-size: 30rpx;
+  color: rgb(12, 11, 11);
+  height: 4.8em;
+  overflow: hidden;
+  word-break: break-all;
+  width: 330rpx;
+}
+
+
+.cu-tag.sm {
+font-size: 25rpx;
+}
+
+
+.cu-card  .condition{
+  display: inline-block; 
+     position: absolute;
+     margin-top: 10rpx;
+     margin-left: 463rpx; 
+}
+.cu-card  .condition .cond{
+ width: 215rpx;
+ height: 215rpx;
+ /* float: right; */
+ transform:rotate(-15deg);
+}
+
+.cu-card .condition{
+ position: absolute;
+ margin-top: 0rpx;   
+ margin-left: 443rpx; 
+}
+
+.cu-card .cond{
+ width: 215rpx;
+ height: 215rpx;
+ transform:rotate(-15deg);
+}
+.container {
+  padding: 0 12.5rpx 0 12.5rpx;
+  width:750rpx;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.swiper1{
+  display: flex; 
+  width: 100%; 
+  flex-direction: row; 
+  line-height: 80rpx; 
+  position: fixed;
+  max-height: 100%;
+  height: 100%;
+}

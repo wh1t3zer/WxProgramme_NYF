@@ -1,0 +1,50 @@
+<template name="xianzhiTemp">
+
+
+  <view class='categories'>
+    <text wx:for="{{categories}}" data-index="{{index}}" class="item {{currentData==index?'active':''}}" bindtap="categoriesTab" wx:key="unique">{{item}}</text>
+  </view>
+  <swiper current="{{currentData}}" class="swiper" scroll-y="true" duration="300" bindchange="categoriesChange">
+    <block wx:for="{{categories}}" wx:for-item="category" wx:key="index">
+      <swiper-item>
+        <scroll-view scroll-y="true" class="container" style="height:88%;" lower-threshold="5" bindscrolltolower="lower" upper-threshold="10"enable-back-to-top="true">
+          <view class="item_container">
+            <view wx:if="{{!myPage}}">
+              <view class="item_each" wx:for="{{DBdata}}" wx:for-index="idx" wx:key="index" wx:if="{{category==('全部')||item.type==category}}">
+                <view bindtap='jumpToPost'data-id="{{item._id}}">
+                  <view class="item_cell">
+                    <image src="{{item.imgs[0]}}" style="width=100%" mode="aspectFit" lazy-load="true"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text">{{item.content}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price">￥{{item.price}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view wx:else>
+              <view class="item_each" wx:for="{{DBdata}}" wx:for-index="idx" wx:key="index" wx:if="{{(item._openid == user_openid) && (category==('全部')||item.type==category)}}">
+                <view bindtap='jumpToPost' id='{{idx}}'>
+                  <view class="item_cell">
+                    <image src="{{item.imgs[0]}}" style="width=100%" mode="aspectFit" lazy-load="true"></image>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_text">{{item.content}}</text>
+                  </view>
+                  <view class="item_cell">
+                    <text class="item_price">￥{{item.price}}</text>
+                  </view>
+                </view>
+                <view class="xianzhi-card delete" >
+                  <button class="cu-btn round lines-red" role="button" aria-disabled="false" style="width:150rpx;margin-right:30rpx;" bindtap="deleteGood" id='{{idx}}'>删除</button>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>

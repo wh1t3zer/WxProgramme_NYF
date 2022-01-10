@@ -1,0 +1,82 @@
+
+  <view class="container">
+    <view class="nav-bar-container" >
+      <view class="nav-bar">
+        <view class='all{{select==type?"selected":""}}' bindtap="selected" data-type="1">全部</view>
+        <view class='hot{{select==type?"selected":""}}' bindtap="selected" data-type="2">热门</view>
+      </view>
+    </view>
+
+    <view class="container-wall">
+      <view class="wall-item" wx:for="{{love}}"wx:key="love">
+        <view class="item-container" data-id="{{item._id}}" id="{{item._id}}" >
+
+       <!-- 头像 -->
+       <view class="item-image">
+                <image bindtap="previewImage" id="{{swiperList[item.swiper_index].url}}" src="{{swiperList[item.swiper_index].url}}"></image>
+        </view>
+        <view class="item-content">
+          <view class="user-name">
+            <view wx:if="{{item.private==false || item.private==''}}">
+                <view class='nickname'>{{item.nickname}}</view>
+              </view>
+              <view wx:if="{{item.private==true}}" class='nickname'>匿名用户</view>
+          </view>
+           <!-- 表白 -->
+           <view class='for-user'>
+                    <view style="color:grey;" wx:if="{{item.name}}">表白@{{item.name}}</view>
+            </view>
+            <!-- 内容 -->
+            <view class="content" wx:if="{{item.content}}"style="color:#2c2c2c;"bindtap="lovedetail"data-id="{{item._id}}">{{item.content}}</view>
+             <view class="single-image" wx:if='{{item.images.length==1}}'>
+                    <image mode="widthFix" class="image-item" wx:for="{{item.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+              </view>
+
+              <view class='more-image' wx:if='{{item.images.length>1}}'>
+                    <image mode="aspectFill" class="image-item" 
+                    wx:for="{{item.images}}" bindtap="previewMoreImage"wx:key="images" wx:for-item="sitem"data-obj="{{item.images}}"src="{{sitem}}"
+                    id="{{sitem}}"></image>
+                </view>
+
+                <!-- 发布时间 -->
+                <view class="post-time">
+                     <!-- 时间 -->
+                   <view class="time-and-delete">
+                    <view>{{item.created_at}}</view>
+                    <view class="delete-post" id="{{item._id}}" wx:if="{{item.can_delete}}" bindtap="deletePost">删除</view>
+                   </view>
+                   <view>
+                    <view class="footer-comment">
+                       <!-- 未赞 -->
+                       <image src="{{dianzanUrl}}"bindtap="praise"style="margin-right: 30rpx; padding: 5rpx; position: relative; left: -80rpx; top: 68rpx"></image>
+                       <!-- <image wx:else bindtap="praise"data-posteropenid="{{item.posteropenid}}" data-dbname="love" data-index="{{index}}"data-obj_type="love" data-id="{{item._id}}" data-iszan="true" style="margin-right: 30rpx; padding: 5rpx; position: relative; left: -80rpx; top: 68rpx"src="../../images/color-love.png"></image> -->
+
+                       <view class="praise_number" >{{item.praise_number}}</view>
+
+                       <image src='../../images/topic_comment.png' data-posteropenid="{{item._openid}}"data-target="Modal" data-obj_type='love' data-dbname="love"  data-id="{{item._id}}"style="position: relative; left: 15rpx; top: -10rpx" bindtap="lovedetail"></image> 
+                       <view class="comment_number"  >{{item.comment.length}}</view>
+                    </view>
+                   </view>
+                </view>
+        </view>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+  </view>
+  <get-more-loading wx:if="{{showGetMoreLoading}}"></get-more-loading>
+  <not-more wx:if="{{love.length!=0 && notDataTips}}"></not-more>
+
+
+<!-- 发布表白按钮 -->
+<view class='post-container' >
+  <view class="wall"></view>
+      <!-- <view class="post">
+          <image src="../../images/卖舍友.png" bindtap="post_friend"></image>
+      </view> -->
+      <view class="wall"></view>
+      <view class="post">
+          <image src="../../images/post.png" bindtap="post_love"></image>
+      </view>
+      
+</view>

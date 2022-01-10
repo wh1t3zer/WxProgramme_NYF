@@ -1,0 +1,41 @@
+<form report-submit="false" bindsubmit="uploadPost">
+<!-- 内容 -->
+<view class="content" >
+    <textarea name="textContent" maxlength="200" placeholder="记录这一刻，晒给懂你的人" class="input"placeholder-class='placeholder'></textarea>
+
+<!-- 上传图片 -->
+<view class="upload_container">
+        <view class="upload_box" wx:for="{{images}}" wx:key="*this">
+          <image class="upload_image" src="{{item}}" data-index="{{index}}" bindtap="handleImagePreview" mode="aspectFill"></image>
+          <image class="delete_image" bindtap="removeImage" data-index="{{index}}" src="../../../images/x.png"/>
+        </view>
+        <view class="upload_box">
+          <view class="upload_input" bindtap="chooseImage"></view>
+        </view>
+    </view>
+<!-- 获取地址 -->
+<view bindtap="GetLocation">
+    <text class="cuIcon-location lg text-grey" style="font-size:40rpx">
+    </text>
+    <text style="font-size:35rpx">所在位置</text>
+    <text class="fabu_select"></text>
+</view>
+
+<!-- 发布到目标版块 -->
+    <view class="fabu_cells">
+    <view class="fabu_cell">
+      <text class="fabu_title">板块</text>
+      <picker name="fabu_type" style="flex:1;display:flex;justify-content:flex-end" bindchange="bindPickerChange" value="{{type_index}}" range="{{types}}">
+        <text class="fabu_select">{{fabu_type!=""?fabu_type:"请选择发布的版块"}}</text>
+      </picker>
+    </view>
+    </view>
+</view>
+
+<button wx:if="{{display}}" class="fabu_btn" report-submit='true' form-type='submit'>发布</button>
+
+
+</form>
+
+
+

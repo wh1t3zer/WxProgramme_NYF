@@ -1,0 +1,22 @@
+<view class="top">
+  <view class="cu-form-group">
+    <view class="title">姓名</view>
+    <input placeholder="请输入您的姓名" bindinput="GetName"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">院系</view>
+    <input placeholder="请输入您所在的院系" maxlength="14" bindinput="Getyuanxi"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">电话</view>
+    <input placeholder="请输入您的电话" maxlength="11" bindinput="GetPhone"></input>
+  </view>
+</view>
+
+<view class="content">
+  <view class="cu-form-group margin-top">
+  <textarea bindinput="GetContent" placeholder="请留下您宝贵的意见或建议"></textarea>
+  </view>
+</view>
+
+<button class="cu-btn bg-orange margin-tb-sm lg" role="button" aria-disabled="false"bindtap="confirm">提交反馈</button>

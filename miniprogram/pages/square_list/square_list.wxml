@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="user_img">
+    <image src="{{swiperList[detail.swiper_index].url}}"></image>
+  </view>
+  <view class="content">
+    <view class="user-name">{{detail.nickname}}</view>
+    <view style="position: relative; left: 12%;">{{detail.created_at}}</view>
+  </view>
+  <view class="text">{{detail.content}}</view>
+
+  <view class="single-image" wx:if='{{detail.images.length==1}}'>
+                    <image mode="widthFix" class="image-item" wx:for="{{detail.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+  </view>
+
+  <view class="two-image" wx:if='{{detail.images.length==2}}'>
+                    <image mode="aspectFill" class="image-item" wx:for="{{detail.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+  </view>
+
+  <view class='more-image' wx:if='{{detail.images.length>2}}'>
+                    <image mode="aspectFill" class="image-item" 
+                    wx:for="{{detail.images}}" bindtap="previewMoreImage"wx:key="images" wx:for-item="sitem"data-obj="{{detail.images}}"src="{{sitem}}"
+                    id="{{sitem}}"></image>
+  </view>
+  <!-- <view>
+  <image src="{{dianzanUrl}}" class="image" bindtap="dianzan"></image>
+  <text style="position: relative; left: 92%; top: 4%">{{detail.praise_number}}</text>
+  </view> -->
+  <view class="comment">评论 
+  <view class="comment_number" wx:if="{{detail.comment.length>0}}" >{{detail.comment.length}}</view>
+    
+  <image src="{{dianzanUrl}}" class="image" bindtap="dianzan"></image>
+  <text style="position: relative; left:56%;">{{detail.praise_number}}</text>
+
+  <image src="../../images/topic_comment.png" class="image" bindtap=""></image>
+
+  <text style="position: relative; left: 375rpx; ">评论</text>
+  </view>
+  <view style="border-bottom:1px solid grey; margin-top:0rpx;"></view>
+  
+  <view wx:if="{{detail.comment.length==0}}" style="height:5%;margin-top:5rpx;">
+  <input placeholder="请输入评论内容" bindinput="getinfo" value="{{content}}" style="width:80%;"></input>
+
+    <button bindtap="postcomment" class="cu-btn round bg-orange" style="width: 20%; left: 80%; top: -55rpx; position: relative">发送</button>
+  </view>
+
+<view>
+ <view wx:for="{{comment}}" wx:key="index" class="comment_container" style="width:100%; height: 180rpx; display: flex;flex-direction: column">
+
+  <view class="user_img">
+    <image src="{{swiperList[item.swiper_index].url}}"></image>
+  </view>
+
+  <view class="comment_name">
+    <text>{{item.name}}</text>
+  </view>
+  <view class="comment_content">
+    <text>{{item.content}}</text>
+  </view>
+  <view class="comment_date">
+   {{item.date}}
+  </view>
+ </view>
+</view>
+</view>

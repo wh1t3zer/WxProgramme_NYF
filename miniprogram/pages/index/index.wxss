@@ -1,0 +1,89 @@
+.index{
+  width: 95vw;
+  margin: auto;
+  margin-top: 3vw;
+}
+swiper{
+  height: 30vh;
+  box-shadow: 10rpx 10rpx 10rpx rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+
+}
+swiper-item{
+  border-radius: 20rpx;
+}
+image{
+  width: 100%;
+  height: 30vh;
+}
+
+.advertise{
+  position: relative; 
+  width: 750rpx; 
+  background: #d81515; 
+  min-height: 100px; 
+  left: 0rpx; 
+  top: 198rpx; 
+  height: 182rpx; 
+  display: block; 
+  box-sizing: border-box
+}
+
+page{
+  background-size: cover;
+  width: 100vw;
+  background-image:url('https://636c-cloud1-8gy5it9pf79305cf-1306549006.tcb.qcloud.la/background.jpg?sign=311e0695d57c0de3140dc456612b82d0&t=1632647709');
+}
+
+.inform-warp{
+  background: #f8f8f8;
+  padding-left: 4%;
+  width: 750rpx;
+  height: 82rpx; 
+  display: block; 
+  box-sizing: border-box; 
+}
+.inform{
+  width: 30rpx;
+  height: 30rpx;
+  margin-bottom: 30rpx;
+  display: inline-block;
+}
+.container {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.scrolltxt {
+  padding-left: 20rpx;
+  background: #f8f8f8;
+}
+
+.marquee_box {
+  position: relative;
+  color: rgb(243, 90, 19);
+  height: 90rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+
+
+
+

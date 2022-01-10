@@ -1,0 +1,80 @@
+<form  bindsubmit='formSubmit'>
+  <view class="cu-form-group margin-top">
+		<view class="title">验证状态</view>
+		<text class="pass">{{al_pass?(pass?'通过':'未通过'):'待验证'}}</text>
+	</view>
+  <view class="cu-form-group bg-white margin-top">
+		<view class="title">
+			头像
+		</view>
+	</view>
+  <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+    <view class="tower-item {{item.zIndex==1?'none':''}} {{item.zIndex!=4?'imgBlur':''}}" wx:for="{{swiperList}}" wx:key="index" style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      </view>
+    </view>
+  </view>
+	<view class="cu-form-group margin-top">
+		<view class="title">昵称</view>
+		<input name="nick_name" placeholder="{{old_nick_name}}"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">学校</view>
+		<picker bindchange="SchoolChange" value="{{school_index}}" range="{{school_choose}}">
+			<view class="picker">
+				{{school_index!=null?school_choose[school_index]:'请选择您所在的学校'}}
+			</view>
+		</picker>
+	</view>
+  	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input name="phone" placeholder="{{old_phone}}" type="number" maxlength="11" bindinput="getPhone"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-yellow">
+				+86
+			</view>
+			<view class="cu-tag line-yellow">
+				中国大陆
+			</view>
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">微信号</view>
+		<input name="wechat_id" placeholder="{{old_wechat_id}}"></input>
+	</view>
+  <view class="cu-form-group bg-white margin-top">
+		<view class="title">
+			学生证认证
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="delImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view class="padding flex flex-direction">
+    <button class="cu-btn round bg-yellow shadow lg" form-type='submit'>确认修改</button>
+  </view>
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">提示</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        {{warning}}
+      </view>
+    </view>
+  </view>
+</form>

@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="user_img">
+    <image src="{{swiperList[detail.swiper_index].url}}"></image>
+  </view>
+  <view class="content">
+    <view class="user-name" wx:if="{{detail.private==''&&detail.private==false}}"  style="">{{detail.nickname}}</view>
+    <view wx:if="{{detail.private==true}}" class="user-name">匿名用户</view>
+    <view style="position: relative; left: 12%;">{{detail.created_at}}</view>
+  </view>
+  <view class="name">
+    <view style="color:grey;" wx:if="{{detail.name}}">表白@{{detail.name}}</view>
+  </view>
+  <view class="text">{{detail.content}}</view>
+
+  <view class="single-image" wx:if='{{detail.images.length==1}}'>
+                    <image mode="widthFix" class="image-item" wx:for="{{detail.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+  </view>
+
+  <view class="two-image" wx:if='{{detail.images.length==2}}'>
+                    <image mode="aspectFill" class="image-item" wx:for="{{detail.images}}" src="{{item}}"id="{{item}}" wx:key="images" bindtap="previewImage" show-menu-by-longpress="true"></image>
+  </view>
+
+  <view class='more-image' wx:if='{{detail.images.length>2}}'>
+                    <image mode="aspectFill" class="image-item" 
+                    wx:for="{{detail.images}}" bindtap="previewMoreImage"wx:key="images" wx:for-item="sitem"data-obj="{{detail.images}}"src="{{sitem}}"
+                    id="{{sitem}}"></image>
+  </view>
+  
+  <view class="comment">评论 <view class="comment_number" wx:if="{{detail.comment.length>0}}" >{{detail.comment.length}}</view>
+  </view>
+
+  <view style="border-bottom:1px solid grey; margin-top:0rpx;"></view>
+  <view wx:if="{{detail.comment_number==0}}">
+  <input placeholder="请输入评论内容" bindinput="getinfo" value="{{content}}"></input>
+  </view>
+
+<button bindtap="postcomment" >发表评论</button>
+<view>
+ <block wx:for="{{comment}}" wx:key="index">
+  <view class="comment">
+    <text>{{item.name}}发表评论：</text>
+    <text>{{item.content}}</text>
+    <text>{{item.date}}</text>
+  </view>
+ </block>
+  </view>
+
+  <view wx:if="{{detail.comment}}"wx:for="{{detail.comment}}" src="{{item}}" wx:key="comment">
+  {{item}}</view>
+  
+</view>

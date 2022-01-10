@@ -1,0 +1,138 @@
+.content{
+  width: 750rpx; 
+  height: 750rpx; 
+  display: block; 
+  box-sizing: border-box;
+  background-color: #fff;
+  padding:0 15rpx 0 15rpx;
+}
+
+.input{
+  position: relative; 
+  left: 0rpx; 
+  top: 30rpx; 
+  width: 750rpx; 
+  height: 50%; 
+  display: block; 
+  box-sizing: border-box;
+  background-color: #fff ;
+}
+.fabu_cells {
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.fabu_cell {
+  display: flex;
+  padding: 20rpx 0;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.fabu_title {
+  width: 80px;
+  font-size: 15px;
+  
+  margin-left: 20rpx;
+}
+.fabu_select {
+  font-size: 16px;
+  color: #b2b2b2;
+}
+
+/*伪元素实现右箭头*/
+.fabu_select:after{
+  content: " ";
+  display: inline-block;
+  height:6px;
+  width:6px;
+  border-top:2px solid #768df3; 
+  border-right: 2px solid #768df3;
+  transform: rotate(45deg);
+  margin-left: 5rpx;
+}
+.upload_container{
+  display:inline-block;
+  padding: 5rpx 0 10rpx 0;
+  
+}
+.upload_imgbox{
+  float: left;
+  position: relative;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+.upload_image,.upload_image_cover{
+  width: 150rpx;
+  height: 150rpx;
+}
+.upload_image_cover::before{
+  position: absolute;
+  top:70%;
+  right: 0;
+  bottom: 5.8%;
+  left: 0;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* 伪元素实现上传图片的加号 */
+.upload_box::before,.upload_box:after{
+  content:"";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #ebedf3;
+}
+.upload_box:before{
+  width: 2px;
+  height: 75rpx;
+}
+.upload_box:after{
+  width: 75rpx;
+  height: 2px;
+}
+.delete_image{
+  position: absolute;
+  z-index:1;
+  width: 13px;
+  height: 13px;
+  transform: translate(-100%,0);
+}
+.upload_box{
+  float:left;
+  position: relative;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #f8f8f8;
+}
+.upload_input{
+  position: absolute;
+  z-index:1;
+  top:22rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.fabu_btn{
+  width: 90%;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  background-color:rgb(235, 106, 20);
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  top:200rpx;
+}
+.placeholder{
+  font-size: 15 px;
+  color: #b2b2b2;
+}
