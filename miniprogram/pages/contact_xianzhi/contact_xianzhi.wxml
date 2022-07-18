@@ -41,6 +41,6 @@
 <view wx:if="{{detail.contact=='wechat'||detail.contact=='all'}}">
   <text style="margin-left:2%">微信号：{{user_data.wechat_id}}</text>
   <view class="margin-tb-sm text-center" style="width: 25%;display: inline-flex; left:34%; position: relative">
-<button class="cu-btn round bg-yellow" bindtap="copywechat" id="wechatButton">复制微信</button>
+<button class="cu-btn round bg-yellow" bindtap="copyText" id="wechatButton">复制微信</button>
 </view>
 </view>
